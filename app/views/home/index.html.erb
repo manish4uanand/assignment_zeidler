@@ -1,0 +1,28 @@
+<div class="row" id="product_list">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.first_name %></td>
+          <td><%= u.last_name %></td>
+          <td><%= u.age %></td>
+          <td><%= u.gender %></td>
+          <td><%= u.country %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @users,  renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+
